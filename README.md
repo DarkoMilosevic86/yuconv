@@ -28,11 +28,11 @@ YuConv documentation is available on the [YuConv Wiki Page](https://github.com/D
 ## YuConv Repository
 
 To clone YuConv repository, use the following command:
-## Kloniranje repozitorijuma
-
-Da biste klonirali ovaj repozitorijum, koristite sledeću komandu:
-
 ```bash
 git clone https://github.com/DarkoMilosevic86/yuconv.git
-```
 
+
+## Issues
+
+To submit or review YuConv issues, visite:
+[YuConv Issues Page](https://github.com/DarkoMilosevic86/yuconv/issues)
