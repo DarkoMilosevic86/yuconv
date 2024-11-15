@@ -17,7 +17,7 @@
 from setuptools import setup, find_packages
 setup(
     name="yuconv",
-    version="0.1",
+    version="0.2",
     author="Darko Milosevic",
     author_email="daremc86@gmail.com",
     url="https://github.com/DarkoMilosevic86/yuconv.git",
@@ -29,6 +29,11 @@ setup(
         'srtools',
         "python-docx",
     ],
+    entry_points={
+        "console_scripts": [
+            "yuconv=yuconv.__main__:main",
+        ],
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License",
