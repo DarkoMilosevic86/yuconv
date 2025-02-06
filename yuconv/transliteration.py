@@ -14,8 +14,8 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from srtools import cyrillic_to_latin
-from srtools import latin_to_cyrillic
+from .trans import cyrillic_to_latin
+from .trans import latin_to_cyrillic
 from docx import Document
 
 
