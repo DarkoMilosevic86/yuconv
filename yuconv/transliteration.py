@@ -14,8 +14,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from .trans import cyrillic_to_latin
-from .trans import latin_to_cyrillic
+from .converter import cir_to_lat, lat_to_cir
 from docx import Document
 
 
@@ -30,9 +29,9 @@ def transliterate_text(input_text: str, transliteration_mode:str) -> str:
     """
     transliterated_text = ''
     if transliteration_mode == "lat-to-cyr":
-        transliterated_text = latin_to_cyrillic(input_text)
+        transliterated_text = lat_to_cir(input_text)
     elif transliteration_mode == "cyr-to-lat":
-        transliterated_text = cyrillic_to_latin(input_text)
+        transliterated_text = cir_to_lat(input_text)
     else:
         raise ValueError('Invalid transliteration mode.')
     return transliterated_text
@@ -50,9 +49,9 @@ def transliterate_file(input_file:str, output_file:str, transliteration_mode:str
     with open(input_file, 'r', encoding='utf-8') as f:
         source_text = f.read()
     if transliteration_mode == "lat-to-cyr":
-        transliterated_text = latin_to_cyrillic(source_text)
+        transliterated_text = lat_to_cir(source_text)
     elif transliteration_mode == "cyr-to-lat":
-        transliterated_text = cyrillic_to_latin(source_text)
+        transliterated_text = cir_to_lat(source_text)
     else:
         raise ValueError('Invalid transliteration mode')
     with open(output_file, 'w', encoding='utf-8') as f:
@@ -71,9 +70,9 @@ def transliterate_word_document(input_document:str, output_document:str, transli
         source_text = paragraph.text
         dest_text = ''
         if transliteration_mode == "lat-to-cyr":
-            dest_text = latin_to_cyrillic(source_text)
+            dest_text = lat_to_cir(source_text)
         elif transliteration_mode == "cyr-to-lat":
-            dest_text = cyrillic_to_latin(source_text)
+            dest_text = cir_to_lat(source_text)
         else:
             raise ValueError('Invalid transliteration mode.')
         paragraph.text = dest_text
